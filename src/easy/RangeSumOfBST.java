@@ -24,9 +24,6 @@ package easy;
   }
 
 public class RangeSumOfBST {
-    public static void main(String[] args) {
-
-    }
 
     public int rangeSumBST(TreeNode root, int L, int R) {
         if(root==null) {
