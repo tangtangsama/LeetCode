@@ -1,4 +1,4 @@
-package easyGo;
+package easy;
 
 /**
  * @author sucre
@@ -7,11 +7,11 @@ package easyGo;
  * @description https://leetcode-cn.com/problems/range-sum-of-bst/
  */
 /*
-    µÝ¹éÖÕÖ¹Ìõ¼þ£º
-    µ±Ç°½ÚµãÎª null Ê±·µ»Ø 0
-    µ±Ç°½Úµã X < L Ê±Ôò·µ»ØÓÒ×ÓÊ÷Ö®ºÍ
-    µ±Ç°½Úµã X > R Ê±Ôò·µ»Ø×ó×ÓÊ÷Ö®ºÍ
-    µ±Ç°½Úµã X >= L ÇÒ X <= R Ê±Ôò·µ»Ø£ºµ±Ç°½ÚµãÖµ + ×ó×ÓÊ÷Ö®ºÍ + ÓÒ×ÓÊ÷Ö®ºÍ
+    é€’å½’ç»ˆæ­¢æ¡ä»¶ï¼š
+    å½“å‰èŠ‚ç‚¹ä¸º null æ—¶è¿”å›ž 0
+    å½“å‰èŠ‚ç‚¹ X < L æ—¶åˆ™è¿”å›žå³å­æ ‘ä¹‹å’Œ
+    å½“å‰èŠ‚ç‚¹ X > R æ—¶åˆ™è¿”å›žå·¦å­æ ‘ä¹‹å’Œ
+    å½“å‰èŠ‚ç‚¹ X >= L ä¸” X <= R æ—¶åˆ™è¿”å›žï¼šå½“å‰èŠ‚ç‚¹å€¼ + å·¦å­æ ‘ä¹‹å’Œ + å³å­æ ‘ä¹‹å’Œ
  */
 
 //  Definition for a binary tree node.
@@ -29,15 +29,17 @@ public class RangeSumOfBST {
     }
 
     public int rangeSumBST(TreeNode root, int L, int R) {
-        if(root==null)
+        if(root==null) {
             return 0;
+        }
         if(root.val<L){
             return rangeSumBST(root.right,L,R);
         }
         if(root.val>R){
             return rangeSumBST(root.left,L,R);
         }
-        else
+        else {
             return root.val+rangeSumBST(root.left,L,R)+rangeSumBST(root.right,L,R);
+        }
     }
 }

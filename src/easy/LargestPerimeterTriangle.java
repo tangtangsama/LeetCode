@@ -1,4 +1,4 @@
-package easyGo;
+package easy;
 
 /**
  * @author sucre
@@ -17,8 +17,9 @@ public class LargestPerimeterTriangle {
         sort(A);
         for (int t = A.length-3;t>=0;t--)
         {
-            if (A[t] + A[t+1] > A[t+2])
+            if (A[t] + A[t+1] > A[t+2]) {
                 return A[t]+A[t+1]+A[t+2];
+            }
         }
         return 0;
     }
@@ -32,7 +33,7 @@ public class LargestPerimeterTriangle {
                     temp = A[j-1];
                     A[j-1] = A[j];
                     A[j] = temp;
-                }else{         //²»ÐèÒª½»»»
+                }else{         //ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
                     break;
                 }
             }

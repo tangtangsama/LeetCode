@@ -1,4 +1,4 @@
-package easyGo;
+package easy;
 
 /**
  * @author sucre
@@ -15,7 +15,9 @@ public class ImplementStr {
     }
 
     public static int strStr(String haystack, String needle) {
-        if (needle == null) return 0;
+        if (needle == null) {
+            return 0;
+        }
 
         String s1 = haystack;
         String s2 = needle;
@@ -32,8 +34,9 @@ public class ImplementStr {
         }
         if (j == s2.length()) {
             return i - j;
-        } else
+        } else {
             return -1;
+        }
     }
 }
 

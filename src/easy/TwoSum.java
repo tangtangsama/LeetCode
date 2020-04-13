@@ -1,4 +1,4 @@
-package easyGo;
+package easy;
 
 /**
  * @author sucre

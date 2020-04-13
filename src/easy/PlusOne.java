@@ -1,4 +1,4 @@
-package easyGo;
+package easy;
 
 /**
  * @author sucre
@@ -17,7 +17,9 @@ public class PlusOne {
         {
             digits[i]++;
             digits[i] = digits[i]%10;
-            if(digits[i]!=0) return digits;
+            if(digits[i]!=0) {
+                return digits;
+            }
         }
         digits = new int[digits.length+1];
         digits[0]=1;

@@ -1,4 +1,4 @@
-package hardTry;
+package hard;
 
 /**
  * @author sucre
@@ -8,7 +8,7 @@ package hardTry;
  */
 
 /*
-    Ë«Ö¸Õë·½·¨Çó½â
+   åŒæŒ‡é’ˆæ–¹æ³•æ±‚è§£
     https://leetcode-cn.com/problems/sliding-window-maximum/solution/java-shuang-zhi-zhen-fa-by-qihang666/
 
  */
@@ -24,38 +24,41 @@ public class SlidingWindowMaximum {
     }
 
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        if(nums.length == 0 || k ==0)
+        if(nums.length == 0 || k ==0) {
             return new int[]{};
-        if(k == 1)
+        }
+        if(k == 1) {
             return nums;
+        }
 
         int max = Integer.MIN_VALUE;
         int maxIndex = 0;
-        int i = 0,j = 0;    // ¶¨ÒåË«Ö¸Õë£¬·Ö±ğÖ¸Ïò´°¿ÚµÄÍ·ºÍÎ²
+        int i = 0,j = 0;    // å®šä¹‰åŒæŒ‡é’ˆï¼Œåˆ†åˆ«æŒ‡å‘çª—å£çš„å¤´å’Œå°¾
         int[] result = new int[nums.length-k+1];
 
-        for (; j<k; j++){   //ÏÈÕÒµÚÒ»¸ö´°¿ÚÖĞµÄ×î´óÖµ
+        for (; j<k; j++){   //å…ˆæ‰¾ç¬¬ä¸€ä¸ªçª—å£ä¸­çš„æœ€å¤§å€¼
             if(nums[j] >= max){
                 max = nums[j];
                 maxIndex = j;
             }
         }
 
-        result[i++] = max;    //´æÈëµÚÒ»¸ö´°¿ÚµÄ×îÖµ
+        result[i++] = max;    //å­˜å…¥ç¬¬ä¸€ä¸ªçª—å£çš„æœ€å€¼
 
 
-        for (; j<nums.length; j++,i++){ //´°¿ÚÏòºóÒÆ¶¯
-            if(nums[j] >= max){  //ÓÒ²àĞÂÔªËØ±È×î´óÖµ»¹´ó£¬Ôò¸ÃĞÂÔªËØÎªĞÂ´°¿ÚµÄ×î´óÖµ
+        for (; j<nums.length; j++,i++){ //çª—å£å‘åç§»åŠ¨
+            if(nums[j] >= max){  //å³ä¾§æ–°å…ƒç´ æ¯”æœ€å¤§å€¼è¿˜å¤§ï¼Œåˆ™è¯¥æ–°å…ƒç´ ä¸ºæ–°çª—å£çš„æœ€å¤§å€¼
+                max = nums[j];
                 max = nums[j];
                 maxIndex = j;
                 result[i] = max;
                 continue;
             }
-            if(maxIndex >= i){  //ÓÒ²àĞÂÔªËØ±Èµ±Ç°×î´óÖµĞ¡£¬ÇÒ×î´óÖµÏÂ±êÈÔÔÚ´°¿ÚÖĞ£¬Ôò×î´óÖµ²»±ä
+            if(maxIndex >= i){  //å³ä¾§æ–°å…ƒç´ æ¯”å½“å‰æœ€å¤§å€¼å°ï¼Œä¸”æœ€å¤§å€¼ä¸‹æ ‡ä»åœ¨çª—å£ä¸­ï¼Œåˆ™æœ€å¤§å€¼ä¸å˜
                 result[i] = max;
                 continue;
             }
-            if(maxIndex < i){   //ÓÒ²àĞÂÔªËØ±Èµ±Ç°×î´óÖµĞ¡£¬ÇÒ×î´óÖµÏÂ±ê²»ÔÚ´°¿ÚÖĞ£¬±éÀú´°¿ÚÕÒ×î´óÖµ
+            if(maxIndex < i){   //å³ä¾§æ–°å…ƒç´ æ¯”å½“å‰æœ€å¤§å€¼å°ï¼Œä¸”æœ€å¤§å€¼ä¸‹æ ‡ä¸åœ¨çª—å£ä¸­ï¼Œéå†çª—å£æ‰¾æœ€å¤§å€¼
                 max = Integer.MIN_VALUE;
                 for(int l = j; l>=i; l--){
                     if(nums[l] > max){

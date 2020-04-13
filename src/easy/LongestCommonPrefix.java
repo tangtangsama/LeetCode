@@ -1,4 +1,4 @@
-package easyGo;
+package easy;
 
 /**
  * @author sucre
@@ -8,8 +8,8 @@ package easyGo;
  */
 
 /*
-    ³õÊ¼»¯½á¹û´®ÎªµÚÒ»¸ö×Ö·û´®£¬½«½á¹û´®ÒÀ´ÎÓëºóÃæµÄ×Ö·û´®½øĞĞ±È½Ï£¬ÕÒ³öÁ½Õß¼äµÄ×î³¤¹«¹²Ç°×º£¬²¢½«½á¹û¸üĞÂÎªĞÂµÄ½á¹û´®¡£
-    ±È½Ï¹ı³ÌÖĞÈç¹û½á¹û´®Îª¿ÕÖ±½Ó½áÊø£¬ËµÃ÷²»´æÔÚ¹«¹²×î³¤Ç°×º¡£
+     åˆå§‹åŒ–ç»“æœä¸²ä¸ºç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå°†ç»“æœä¸²ä¾æ¬¡ä¸åé¢çš„å­—ç¬¦ä¸²è¿›è¡Œæ¯”è¾ƒï¼Œæ‰¾å‡ºä¸¤è€…é—´çš„æœ€é•¿å…¬å…±å‰ç¼€ï¼Œå¹¶å°†ç»“æœæ›´æ–°ä¸ºæ–°çš„ç»“æœä¸²ã€‚
+    æ¯”è¾ƒè¿‡ç¨‹ä¸­å¦‚æœç»“æœä¸²ä¸ºç©ºç›´æ¥ç»“æŸï¼Œè¯´æ˜ä¸å­˜åœ¨å…¬å…±æœ€é•¿å‰ç¼€ã€‚
  */
 public class LongestCommonPrefix {
     public static void main(String[] args) {
@@ -18,19 +18,22 @@ public class LongestCommonPrefix {
     }
 
     public static String longestCommonPrefix(String[] strs) {
-        if(strs.length == 0)
+        if(strs.length == 0) {
             return "";
+        }
 
         String s = strs[0];
         for(int i=0; i<strs.length; i++){
             int j=0;
             for(;j<s.length()&&j<strs[i].length();j++){
-                if(s.charAt(j) != strs[i].charAt(j))
+                if(s.charAt(j) != strs[i].charAt(j)) {
                     break;
+                }
             }
             s=s.substring(0,j);
-            if(s.equals(""))
+            if("".equals(s)) {
                 return s;
+            }
         }
         return s;
     }
