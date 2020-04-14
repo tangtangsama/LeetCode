@@ -14,16 +14,17 @@ package easy;
     当前节点 X >= L 且 X <= R 时则返回：当前节点值 + 左子树之和 + 右子树之和
  */
 
-//  Definition for a binary tree node.
 
-  class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
 
 public class RangeSumOfBST {
+    //  Definition for a binary tree node.
+
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
 
     public int rangeSumBST(TreeNode root, int L, int R) {
         if(root==null) {
